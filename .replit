@@ -1,0 +1,13 @@
+run = "python3 -m http.server 8000 --directory frontend"
+
+language = "python3"
+modules = ["python-3.11"]
+
+[packager]
+language = "python"
+
+[[ports]]
+localPort = 8000
+externalPort = 80
+
+[nix]

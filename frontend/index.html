@@ -1,64 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Library Management System</title>
-    <link rel="stylesheet" href="css/styles.css"/>
-    <link rel="stylesheet" href="./css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <style>
+    nav {
+      background-color: rgba(0, 0, 40, 0.85);
+      padding: 1em;
+      text-align: center;
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #99ccff;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="main-container">
+  <!-- Navigation bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="myaccount.html">My Account</a>
+    <a href="bemember.html">Be a Member</a>
+    <a href="accessibility.html">Accessibility</a>
+    <a href="newpublished.html">New Published</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contactus.html">Contact Us</a>
+  </nav>
 
-        <img src="./images/Logo.png" alt="LMS Logo" class="logo" />
-        <div class="top-bar">
-            <div class="search-box">
-                <input type="text" placeholder="Search a book..." />
-                <button><i class="fas fa-search"></i></button>
-            </div>
+  <div class="main-container">
 
-            <div class="chat-box">
-                <button><i class="fas fa-comments"></i> Chat Assistant</button>
-                <p class="chat-desc">Need help? Ask our AI assistant!</p>
-            </div>
-        </div>
+    <img src="./images/Logo.png" alt="LMS Logo" class="logo" />
 
-        <div class="grid-menu">
+    <div class="top-bar">
+      <div class="search-box">
+        <input type="text" placeholder="Search a book..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
 
-            <div class="menu-block">
-                <a href="myaccount.html" class="menu-item"><i class="fas fa-user"></i> My Account</a>
-                <p class="desc">Access your profile and dashboard.</p>
-            </div>
-
-            <div class="menu-block">
-                <a href="bemember.html" class="menu-item"><i class="fas fa-user-plus"></i> Be a Member</a>
-                <p class="desc">Register for a new library membership.</p>
-            </div>
-
-            <div class="menu-block">
-                <a href="#accessibility" class="menu-item"><i class="fas fa-universal-access"></i> Accessibility Tools</a>
-                <p class="desc">Visual support and screen reader tools.</p>
-            </div>
-
-            <div class="menu-block">
-                <a href="newpublished.html" class="menu-item"><i class="fas fa-book-open"></i> New Published</a>
-                <p class="desc">Explore the latest books in our collection.</p>
-            </div>
-
-            <div class="menu-block">
-                <a href="#selection" class="menu-item"><i class="fas fa-star"></i> Our Selection</a>
-                <p class="desc">Top picks and curated lists.</p>
-            </div>
-
-            <div class="menu-block">
-                <a href="aboutus.html" class="menu-item"><i class="fas fa-info-circle"></i> About Us</a>
-                <p class="desc">Learn about our library and mission.</p>
-            </div>
-
-        </div>
+      <div class="chat-box">
+        <button><i class="fas fa-comments"></i> Chat Assistant</button>
+        <p class="chat-desc">Need help? Ask our AI assistant!</p>
+      </div>
     </div>
+
+    <div class="grid-menu">
+
+      <div class="menu-block">
+        <a href="myaccount.html" class="menu-item"><i class="fas fa-user"></i> My Account</a>
+        <p class="desc">Access your profile and dashboard.</p>
+      </div>
+
+      <div class="menu-block">
+        <a href="bemember.html" class="menu-item"><i class="fas fa-user-plus"></i> Be a Member</a>
+        <p class="desc">Register for a new library membership.</p>
+      </div>
+
+      <div class="menu-block">
+        <a href="accessibility.html" class="menu-item"><i class="fas fa-universal-access"></i> Accessibility Tools</a>
+        <p class="desc">Visual support and screen reader tools.</p>
+      </div>
+
+      <div class="menu-block">
+        <a href="newpublished.html" class="menu-item"><i class="fas fa-book-open"></i> New Published</a>
+        <p class="desc">Explore the latest books in our collection.</p>
+      </div>
+
+      <div class="menu-block">
+        <a href="#" class="menu-item"><i class="fas fa-star"></i> Our Selection</a>
+        <p class="desc">Top picks and curated lists.</p>
+      </div>
+
+      <div class="menu-block">
+        <a href="aboutus.html" class="menu-item"><i class="fas fa-info-circle"></i> About Us</a>
+        <p class="desc">Learn about our library and mission.</p>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 </html>
