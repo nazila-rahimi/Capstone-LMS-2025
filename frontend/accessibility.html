@@ -87,6 +87,7 @@
       font-weight: bold;
       background: url('../images/background-capstone.png') no-repeat center center fixed;
       background-size: cover;
+      font-size: 16px; /* Base font size for adjustments */
     }
   </style>
 </head>
@@ -121,4 +122,32 @@
         <h2>🔠 Adjust Text Size</h2>
         <button onclick="changeFontSize(1)">A+</button>
         <button onclick="changeFontSize(-1)">A-</button>
-        <button onclick="resetFontSize()">Reset
+        <button onclick="resetFontSize()">Reset</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript for contrast and font size -->
+  <script>
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+
+    let currentFontSize = 16; // default font size in px
+
+    function changeFontSize(amount) {
+      currentFontSize += amount;
+      if (currentFontSize < 10) currentFontSize = 10; // min size
+      if (currentFontSize > 32) currentFontSize = 32; // max size
+      document.body.style.fontSize = currentFontSize + 'px';
+    }
+
+    function resetFontSize() {
+      currentFontSize = 16;
+      document.body.style.fontSize = currentFontSize + 'px';
+    }
+  </script>
+
+</body>
+</html>

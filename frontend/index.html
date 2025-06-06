@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Library Management System</title>
+  <title>Accessibility Tools - LMS</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="./css/all.min.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+      background: url('../images/background-capstone.png') no-repeat center center fixed;
+      background-size: cover;
+      font-size: 16px; /* base size */
+    }
+
     nav {
       background-color: rgba(0, 0, 40, 0.85);
       padding: 1em;
       text-align: center;
-      font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
       font-weight: bold;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       z-index: 10;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -23,9 +31,66 @@
       font-size: 16px;
       transition: all 0.2s ease;
     }
+
     nav a:hover {
       text-decoration: underline;
       color: #99ccff;
+    }
+
+    .main-container {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tools-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 700px;
+      color: white;
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .tools-box h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+      background-color: rgba(0, 0, 70, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 8px 14px;
+      margin-right: 8px;
+      margin-top: 10px;
+      background-color: #006699;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #004466;
+    }
+
+    .high-contrast {
+      background-color: black !important;
+      color: yellow !important;
     }
   </style>
 </head>
@@ -42,56 +107,54 @@
     <a href="contactus.html">Contact Us</a>
   </nav>
 
+  <!-- Main container -->
   <div class="main-container">
+    <div class="tools-box">
+      <h1>Accessibility Tools</h1>
 
-    <img src="./images/Logo.png" alt="LMS Logo" class="logo" />
-
-    <div class="top-bar">
-      <div class="search-box">
-        <input type="text" placeholder="Search a book..." />
-        <button><i class="fas fa-search"></i></button>
+      <!-- Screen Reader -->
+      <div class="section" aria-label="Screen Reader Support">
+        <h2>🦻 Screen Reader Support</h2>
+        <p>This website is compatible with screen readers like NVDA, JAWS, and VoiceOver. All interactive elements have appropriate ARIA labels and roles.</p>
       </div>
 
-      <div class="chat-box">
-        <button><i class="fas fa-comments"></i> Chat Assistant</button>
-        <p class="chat-desc">Need help? Ask our AI assistant!</p>
-      </div>
-    </div>
-
-    <div class="grid-menu">
-
-      <div class="menu-block">
-        <a href="myaccount.html" class="menu-item"><i class="fas fa-user"></i> My Account</a>
-        <p class="desc">Access your profile and dashboard.</p>
+      <!-- High Contrast -->
+      <div class="section" aria-label="High Contrast Mode">
+        <h2>🌗 High Contrast Mode</h2>
+        <button onclick="toggleContrast()">Toggle High Contrast</button>
       </div>
 
-      <div class="menu-block">
-        <a href="bemember.html" class="menu-item"><i class="fas fa-user-plus"></i> Be a Member</a>
-        <p class="desc">Register for a new library membership.</p>
-      </div>
-
-      <div class="menu-block">
-        <a href="accessibility.html" class="menu-item"><i class="fas fa-universal-access"></i> Accessibility Tools</a>
-        <p class="desc">Visual support and screen reader tools.</p>
-      </div>
-
-      <div class="menu-block">
-        <a href="newpublished.html" class="menu-item"><i class="fas fa-book-open"></i> New Published</a>
-        <p class="desc">Explore the latest books in our collection.</p>
-      </div>
-
-      <div class="menu-block">
-        <a href="#" class="menu-item"><i class="fas fa-star"></i> Our Selection</a>
-        <p class="desc">Top picks and curated lists.</p>
-      </div>
-
-      <div class="menu-block">
-        <a href="aboutus.html" class="menu-item"><i class="fas fa-info-circle"></i> About Us</a>
-        <p class="desc">Learn about our library and mission.</p>
+      <!-- Text Size -->
+      <div class="section" aria-label="Text Size Options">
+        <h2>🔠 Adjust Text Size</h2>
+        <button onclick="changeFontSize(1)">A+</button>
+        <button onclick="changeFontSize(-1)">A-</button>
+        <button onclick="resetFontSize()">Reset</button>
       </div>
 
     </div>
   </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+
+    let currentFontSize = 16;
+
+    function changeFontSize(amount) {
+      currentFontSize += amount;
+      if (currentFontSize < 10) currentFontSize = 10;
+      if (currentFontSize > 32) currentFontSize = 32;
+      document.body.style.setProperty('font-size', currentFontSize + 'px', 'important');
+    }
+
+    function resetFontSize() {
+      currentFontSize = 16;
+      document.body.style.setProperty('font-size', currentFontSize + 'px', 'important');
+    }
+  </script>
 
 </body>
 </html>
